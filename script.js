@@ -9,4 +9,24 @@ function hidePopup() {
 
 function deal() {
     hidePopup();
+    fillDeck();
+    shuffle();
+}
+
+function fillDeck() {
+    for (let i = 0; i < cardSuits.length; i++){
+        let suit = cardSuits[i];
+        for (let j = 0; j < cardFaces.length; j++) {
+            let face = cardFaces[j];
+            let card = face + suit;
+            deck.push(card);
+        }
+    }
+}
+
+function shuffle() {
+    for (let i = 0; i < deck.length; i++){
+        let randNum = Math.floor(Math.random() * deck.length);
+        alert(randNum);
+    }
 }
