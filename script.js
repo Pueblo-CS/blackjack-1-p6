@@ -2,6 +2,8 @@
 Each card is a two character string like "Ac" 
 where the first char is the face and second is the suit
 */
+
+// Global variables
 let deck = [];
 const cardSuits = ["c", "s", "d", "h"];
 const cardFaces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"];
@@ -16,6 +18,7 @@ function hidePopup() {
 
 // Deals cards and starts a new round of play
 function deal() {
+    // Reset or start the game
     hidePopup();
     showPlayerControls();
     clearBoard();
@@ -37,8 +40,9 @@ function deal() {
     addDealerCard(dealerHand[1]);
 
     // Check if player has 21
-
+    checkPlayer21OrBust();
     // Check if dealer has 21
+    checkDealer21OrBust();
 }
 
 // Fills deck array with card strings
@@ -318,12 +322,15 @@ function clearBoard() {
 
 // ************************ ASSIGNMENT *********************************
 // Complete the functions below to make this a fully functional Blackjack game
+// You should not need to modify any of the code above this section
 
 
 // Calculates and returns the numerical total of the given array of cards
 // hand: an array of strings representing the cards in either the player's or dealer's hand
 // Called from checkPlayer21OrBust(), checkDealer21OrBust(), dealerTurn(), and checkForWinner()
-// TODO: Implement this function so 
+// TODO: Implement this function. Assume Aces are 1 at first. 
+// Once you get rest of the rest of the assignment completed, work on making this function
+// calculate the best hand total between A = 1 and A = 11. Hint: there can only be one high ace in a hand
 function getHandTotal(hand) {
 
 }
